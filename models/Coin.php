@@ -7,17 +7,10 @@ use yii\db\ActiveRecord;
 
 class Coin extends ActiveRecord
 {
-    /**
-     * @inheritdoc
-     */
-    public static function tableName()
+      public static function tableName()
     {
         return 'coin'; // The name of the table in the database
     }
-
-    /**
-     * @inheritdoc
-     */
     public function rules()
     {
         return [
@@ -32,9 +25,6 @@ class Coin extends ActiveRecord
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function attributeLabels()
     {
         return [
@@ -48,5 +38,5 @@ class Coin extends ActiveRecord
         ];
     }
 
-    
+
 }

@@ -43,7 +43,8 @@ class UserController extends Controller
         }
 
         $model->attributes = $data;
-
+        $csrfToken = Yii::$app->request->getCsrfToken();
+        
         if ($model->save()) {
             return [
                 'status' => 'success',
@@ -51,6 +52,7 @@ class UserController extends Controller
                     'id' => $model->id,
                     'email' => $model->email,
                     'mobile_number' => $model->mobile_number,
+                    'csrf'=> $csrfToken,
                 ],
             ];
         }
